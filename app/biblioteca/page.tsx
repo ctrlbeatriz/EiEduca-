@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type ComponentType } from "react"
 import { Navigation } from "@/components/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -9,7 +9,20 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Search, FileText, Video, Headphones, Download, BookOpen, Eye, Filter, Star, Clock } from "lucide-react"
 
-const resources = [
+type Resource = {
+  id: number
+  title: string
+  description: string
+  type: string
+  category: string
+  size: string
+  duration: string
+  rating: number
+  downloads: number
+  icon: ComponentType<any>
+}
+
+const resources: Resource[] = [
   {
     id: 1,
     title: "Guia Completo de Tecnologia Assistiva",
@@ -180,7 +193,7 @@ export default function BibliotecaPage() {
   )
 }
 
-function ResourceGrid({ resources }: { resources: typeof resources }) {
+function ResourceGrid({ resources }: { resources: Resource[] }) {
   if (resources.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -193,7 +206,7 @@ function ResourceGrid({ resources }: { resources: typeof resources }) {
 
   return (
     <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-      {resources.map((resource) => {
+  {resources.map((resource: Resource) => {
         const Icon = resource.icon
         return (
           <Card key={resource.id} className="flex flex-col">
