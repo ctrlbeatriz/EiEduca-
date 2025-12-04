@@ -1,4 +1,4 @@
-# Guia Completo de Design - EduInclusiva
+# Guia Completo de Design - EiEduca+
 ## Especificações para Implementação no Figma
 
 ---
@@ -304,7 +304,7 @@ Sistema baseado em múltiplos de 4px:
 
 #### Logo e Nome
 - **Logo**: 32px x 32px - Primary color
-- **Texto**: "EduInclusiva" - 20px - font-weight: 600
+- **Texto**: "EiEduca+" - 20px - font-weight: 600
 - **Margin bottom**: 32px
 
 #### Itens de Menu
@@ -1272,7 +1272,7 @@ Sistema baseado em múltiplos de 4px:
 3. **Instituição**
    - Tipografia: 14px
    - Cor: Muted
-   - Texto: "EduInclusiva"
+   - Texto: "EiEduca+"
    - Margin bottom: 16px
 
 4. **Informações** (grid de 2 colunas)
@@ -2366,7 +2366,7 @@ Dashboard (/dashboard)
 
 ---
 
-**Fim do Guia de Design EduInclusiva**
+**Fim do Guia de Design EiEduca+**
 
 Este guia fornece todas as especificações necessárias para implementar o design no Figma. Para dúvidas ou esclarecimentos, consulte as seções específicas ou entre em contato com a equipe de design.
 
