@@ -222,11 +222,10 @@ export default function CursosPage() {
                 {/* Rating + Downloads + Duração */}
                 <div className="flex items-center justify-between text-xs sm:text-sm mb-2">
                   <div className="flex items-center gap-1">
-                    ⭐ <span className="font-medium">4.{Math.floor(Math.random() * 9)}</span>
+                    <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                    <span className="font-medium">4.{Math.floor(Math.random() * 9)}</span>
                     <span className="text-muted-foreground">({Math.floor(10 + Math.random() * 180)} downloads)</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.5 12.75l7.5 7.5 7.5-7.5m-7.5 7.5V3" />
-                    </svg>
+                    <Download className="h-4 w-4 text-muted-foreground" />
                   </div>
 
                   <div className="flex items-center gap-1 text-muted-foreground">
@@ -297,13 +296,12 @@ export default function CursosPage() {
           {/* Rating + Downloads + Duração */}
           <div className="mt-3 flex items-center justify-between text-xs sm:text-sm">
             <div className="flex items-center gap-1">
-              ⭐ <span className="font-medium">4.{Math.floor(Math.random() * 9)}</span>
+              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+              <span className="font-medium">4.{Math.floor(Math.random() * 9)}</span>
               <span className="text-muted-foreground">
                 ({Math.floor(10 + Math.random() * 180)} downloads)
               </span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.5 12.75l7.5 7.5 7.5-7.5m-7.5 7.5V3" />
-              </svg>
+              <Download className="h-4 w-4 text-muted-foreground" />
             </div>
 
             <div className="flex items-center gap-1 text-muted-foreground">

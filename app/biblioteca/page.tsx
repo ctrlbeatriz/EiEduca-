@@ -168,8 +168,14 @@ export default function BibliotecaPage() {
                 variant={selectedCategory === category ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category)}
-                className="shrink-0 whitespace-nowrap bg-transparent text-xs sm:text-sm"
-              >
+                className={`shrink-0 whitespace-nowrap border border-white/20 text-xs sm:text-sm transition-all
+                  ${
+                    selectedCategory === category
+                      ? "bg-[#1E40AF] text-white shadow-md shadow-blue-900/30"
+                      : "bg-[#F8FAFC] text-foreground hover:bg-blue-50 hover:text-[#1E40AF]"
+                  }
+                `}>
+    
                 {category}
               </Button>
             ))}
@@ -209,13 +215,18 @@ function ResourceGrid({ resources }: { resources: Resource[] }) {
   {resources.map((resource: Resource) => {
         const Icon = resource.icon
         return (
-          <Card key={resource.id} className="flex flex-col">
+          <Card key={resource.id} 
+          className="flex flex-col border border-blue-600/10 shadow-[0_4px_12px_rgba(30,64,175,0.08)] hover:shadow-[0_6px_16px_rgba(30,64,175,0.12)] transition-shadow rounded-xl">
             <CardHeader className="p-4 sm:p-6">
               <div className="mb-3 flex items-start justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 sm:h-12 sm:w-12">
-                  <Icon className="h-5 w-5 text-primary sm:h-6 sm:w-6" aria-hidden="true" />
+                  <Icon  className={`h-5 w-5 sm:h-6 sm:w-6 
+                    ${resource.type === "PDF" ? "text-[#EF4444]" : ""} 
+                    ${resource.type === "Áudio" ? "text-[#10B981]" : ""} 
+                    ${resource.type === "Vídeo" ? "text-[#1E40AF]" : ""}`}/>
+
                 </div>
-                <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-xs text-[#64748B]">
                   {resource.type}
                 </Badge>
               </div>
@@ -223,7 +234,7 @@ function ResourceGrid({ resources }: { resources: Resource[] }) {
               <CardDescription className="flex-1 text-sm">{resource.description}</CardDescription>
             </CardHeader>
             <CardContent className="mt-auto space-y-4 p-4 pt-0 sm:p-6 sm:pt-0">
-              <div className="space-y-2 text-xs text-muted-foreground sm:text-sm">
+              <div className="space-y-2 text-xs sm:text-sm text-[#64748B]">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1">
                     <Star className="h-3 w-3 fill-primary text-primary sm:h-4 sm:w-4" aria-hidden="true" />
@@ -241,16 +252,22 @@ function ResourceGrid({ resources }: { resources: Resource[] }) {
                   </div>
                   <span>{resource.size}</span>
                 </div>
-                <Badge variant="outline" className="w-fit text-xs">
-                  {resource.category}
+                <Badge
+                  className="w-fit text-xs bg-[#14B8A6] text-white border-none shadow-sm">                  {resource.category}
                 </Badge>
               </div>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="flex-1 bg-transparent text-xs sm:text-sm">
-                  <Eye className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" aria-hidden="true" />
+
+              <Button
+                size="sm"
+                className="flex-1 text-xs sm:text-sm bg-white border border-blue-600/20 text-blue-700 hover:bg-blue-50">                  <Eye className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" aria-hidden="true" />
                   Ver
                 </Button>
-                <Button size="sm" className="flex-1 text-xs sm:text-sm">
+
+                <Button
+                  size="sm"
+                  className="flex-1 text-xs sm:text-sm bg-[#1E40AF] text-white hover:bg-white-500 hover:shadow-lg hover:shadow-blue-600/40">
+
                   <Download className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" aria-hidden="true" />
                   Baixar
                 </Button>
