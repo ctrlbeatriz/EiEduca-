@@ -258,14 +258,15 @@ export default function CertificacaoPage() {
         </Tabs>
 
         {/* Banner FINAL COM GRADIENTE */}
-        <Card className="mt-8 overflow-hidden border-[#1E40AF]/20">
-          <CardContent
-            className="p-8 text-center text-white"
-            style={{
-              background: "linear-gradient(135deg, #14B8A6, #1E40AF)",
-            }}
-          >
-              <div className="w-full flex flex-col sm:flex-row sm:items-center gap-6">
+        {/* Banner FINAL COM GRADIENTE */}
+        <Card
+          className="mt-8 overflow-hidden border-[#1E40AF]/20"
+          style={{
+            background: "linear-gradient(135deg, #14B8A6, #1E40AF)",
+          }}
+        >
+          <CardContent className="p-8 text-center text-white bg-transparent">
+            <div className="w-full flex flex-col sm:flex-row sm:items-center gap-6">
               <div className="h-16 w-16 flex items-center justify-center rounded-full bg-[#1E40AF]">
                 <Award className="h-8 w-8 text-white" />
               </div>
